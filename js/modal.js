@@ -151,7 +151,7 @@ function createCatDetail(catData) {
 
     async function deleteHandler() {
         if (!Cookies.get('username')) {
-            window.location.replace('/auth.html')
+            window.location.replace('auth.html')
 
         } else {
             const approve = confirm("Вы действительно хотите удалить карточку?");

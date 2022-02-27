@@ -159,7 +159,7 @@ logo.addEventListener("click", handler)
 
 addForm.addEventListener("click", (e) => {
     if (!Cookies.get('username')) {
-        window.location.replace('/auth.html')
+        window.location.replace('auth.html')
     } else {
         addNewCatCard();
     }
