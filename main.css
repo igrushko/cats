@@ -1,7 +1,11 @@
 
+body {
+    font-family: 'Raleway', sans-serif;
+}
 
 .heder_title {
-    font-size: 20px;     
+    font-size: 30px; 
+    padding: 10px calc(50% - 550px);   
 }
 
 header {
@@ -12,11 +16,39 @@ header {
 
 .logo {
     display: flex;
-    padding: 10px calc(50% - 500px);
-  
+    justify-content: center;
     
 }
 
+.header__user-name {
+    text-align: center;
+    height: 20px;
+}
+
+.header__cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-noname {
+    background-image: url("img/nouser1.png");
+    background-position: center;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+}
+
+.header-username {
+    background-image: url("img/user.png");
+    background-position: center;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+}
+.add-img {
+    background-image: url("")
+}
 div.cat__card {
     width: 300px;
     box-sizing: border-box;
@@ -47,27 +79,27 @@ div.cat__card:hover {
        }
 
 div.cat__card:hover>.cat__img {
-      transition: 2s;
-      opacity: 1;
+    transition: 2s;
+    opacity: 1;
 }
 
- .cat__rate {
+.cat__rate {
     display: flex;
-     justify-content: space-between;
-     padding: 0px 15px;
+    justify-content: space-between;
+    padding: 0px 15px;
      
   }
-  h3 {
-      font-size: 25px;
-      margin: 0px;
+h3 {
+    font-size: 25px;
+    margin: 0px;
   }
   .cards {
-      display: grid;
-      grid-template-columns: 300px 300px 300px ;
-      grid-template-rows: auto;
-      gap: 50px;
-     justify-content: center;
-     box-shadow: 0 0 5px 0 #878a87;
+    display: grid;
+    grid-template-columns: 300px 300px 300px ;
+    grid-template-rows: auto;
+    gap: 50px;
+    justify-content: center;
+    box-shadow: 0 0 5px 0 #878a87;
     margin-left: -10px;
     margin-right: -10px;
     padding-top: 50px;
@@ -80,6 +112,53 @@ div.cat__card:hover>.cat__img {
     font-size: 20px;
 }
 
+
+.popup { 
+    display: block;
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    z-index: 10; 
+    width: 100%; 
+    height: 100%;  
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);   
+    visibility: hidden;
+    opacity: 0;
+} 
+
+.addCat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;   
+}
+
+.popap__place {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     justify-content: center;
+     align-items: center;
+}
+
+.popup__content-left{
+    height: 300px;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
 .popup__body {
     width: 45%;
     height: 300px;
@@ -88,7 +167,6 @@ div.cat__card:hover>.cat__img {
     gap: 0 50px;
     padding: 30px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid;
     border-radius: 10px;
     max-width: 1000px;
     position: relative;
@@ -99,37 +177,173 @@ div.cat__card:hover>.cat__img {
     position: absolute;
     right: 10px;
     top: 10px;
-    background: url("img/close.jpg") no-repeat;
+    background: url("img/close1.jpg") no-repeat;
     background-size: contain;
     cursor: pointer;
     background-position: center 0;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
+}
+.modal__edit {
+    position: absolute;
+    top: 10px;
+    right: 70px;
+    cursor: pointer;
+    background-image: url(img/edit.png);
+    background-position: center 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__delete {
+    position: absolute;
+    top: 10px;
+    right: 130px;
+    cursor: pointer;
+    background-image: url(img/delete.png);
+    background-position: center 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal_opened {
+    visibility: visible;
+    opacity: 1;
 }
    
+.enableEdit {
+    visibility: visible;
+    opacity: 1;
+}
+
+.enableDelete {
+    visibility: visible;
+    opacity: 1;
+}
+
 p {
     font-size: 20px;
 }
-#popup { 
-    display: none; 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    z-index: 10; 
-    width: 100%; 
-    height: 100%;  
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4);   
-} 
-.popap__place {
-     display: flex;
-     width: 100%;
-     height: 100%;
-     justify-content: center;
-     align-items: center;
+
+
+
+
+.form__container {
+    width: 35%;
+    box-shadow: 0 0 5px 0 #878a87;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
 }
 
-.popup__content-left{
-    background-position: center;
-    background-size: cover;
+form {
+    width: 100%;     
+    color: rgb(99, 98, 98);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+     }
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+
+.form__submit{
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #ffffff;
+    text-align: center;
+    }
+    
+.form__container label{
+    font-size: 18px;
+    font-weight: 550;
+    margin-top: 15px;
+     }
+     
+.check-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    }
+.input-form {
+    height: 30px;
+    }
+      
+.form__container input, .cat input {
+    font-size: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid rgb(171, 171, 172);               
+    border-radius: 10px;
+    }
+
+.form__container textarea {
+    height: 80px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(171, 171, 172);
+   
 }
+
+button {
+    transition-duration: 0.4s;
+    background-color: rgb(235, 230, 230);
+    color: black;
+    border: 2px solid rgb(171, 171, 172);
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;  
+    font-size: 16px;
+    font-weight: 550;
+    cursor: pointer;
+}
+.page, .cat, .auth-heder__title  {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    padding-top: 25px;
+}
+.page__content {
+    
+    width: 35%;
+    box-shadow: 0 0 5px 0 #878a87;
+    border-radius: 10px; 
+    background-color: #ffffff;
+}
+.auth-form__submit-btn {    
+    margin: 20px 0px;
+}
+.auth-form {
+    padding: 10px 0px;
+    width: 90%;  
+}
+
+.input__form{
+    height: 40px;
+}
+

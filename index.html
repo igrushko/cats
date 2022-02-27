@@ -5,26 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Котики</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>Бабуленькины котики</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
 
     <header class="logo">
-        <img class="header__logo" src='img/kot.jpg' width="80" height="80">
+        <img class="header__logo" src='img/kot.jpg' width="70" height="70">
         <span class="heder_title">Бабуленькины котики</span>
+        <img class="add-img" src="img/add.png" width="50" height="50">
+        <!-- <div class="header__cover"> -->
+        <div class="header__user"></div>
+
+        <!-- </div> -->
+        <!-- <div class="header__user-name"></div> -->
+
     </header>
 
 
     <section class="cards" id="allcats">
-
+        <template id="card-template">
+            <div class="cat__card">
+                <div class="cat__img">
+                </div>
+                <h3></h3>
+                <p class="cat__rate"></p>
+            </div>
+        </template>
     </section>
 
     <div id="popup" class="popup">
         <div class="popap__place">
             <div class="popup__body">
-                <div id="close__modal" class="popup__close"></div>
+                <div class="modal__delete" id="deleteimg"></div>
+                <div class="modal__edit" id="editimg"></div>
+                <div id="modal__close" class="popup__close"></div>
                 <div class="popup__content-left">
                 </div>
                 <div class="popup__content-right">
@@ -36,9 +54,47 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/card.js"></script>
+    <form class="addCat" id="addCat">
+        <div class="form__container">
+            <div class="form__group">
+                <label for="name">Имя котика</label>
+                <input type="text" placeholder="Введите имя" name="name" id="name" class="input-form">
+            </div>
+            <div class="form__group">
+                <label for="favourite">Любимец?<input type="checkbox" name="favourite" value="true"
+                        id="favourite"></label>
+            </div>
+            <div class="form__group">
+                <label for="rate">Рейтинг котика</label>
+                <input type="number" placeholder="0-10" name="rate" min="0" max="10" id="rate" class="input-form">
+            </div>
+            <div class="form__group">
+                <label for="age">Возраст котика</label>
+                <input type="number" placeholder="Введите возраст" name="age" id="age" class="input-form">
+            </div>
+            <div class="form__group">
+                <label for="url">Фото котика</label>
+                <input type="url" placeholder="Введите адрес ссылки на фото" name="img_link" id="url"
+                    class="input-form">
+            </div>
+            <div class="form__group">
+                <label for="description">Описание котика</label>
+                <textarea placeholder="Ведите описание котика" name="description" id="description" class="input-form"></textarea>
+            </div>
 
+            <div class="form__submit">
+                <button type="submit" class="changes_save">Сохранить</button>
+                <button type="submit" class="changes_decline">Отменить</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/test.js"></script>
+    <!-- <script src="js/auth.js"defer></script>
+    <script src="js/form.js"defer></script> -->
 </body>
 <div class="footer__">
     <p>©2022 All rights reserved</p>
