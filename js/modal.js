@@ -102,7 +102,7 @@ function createCatDetail(catData) {
         const inputs = formEdit.querySelectorAll(".input-form");
 
         if (!Cookies.get('username')) {
-            window.location.replace('/auth.html')
+            window.location.replace('auth.html')
         } else {
             closeModal();
             fillEditModal();

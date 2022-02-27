@@ -8,7 +8,7 @@ authForm.addEventListener('submit', (e) => {
     if (inputName.value.trim() !== "") {
         document.cookie = `username=${inputName.value}; secure; samesite = lax;` //записали куку
         inputName.value = "";    // очищаем форму после ввода данных или можно e.target.reset(), который очистит поле полностью, а не отдельную строку
-        window.location.replace('/')
+        window.location.replace('index.html')
     } else {
         alert('Введите данные перед сохранением')
     }
